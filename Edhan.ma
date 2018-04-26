@@ -1,6 +1,6 @@
 //Maya ASCII 2017ff05 scene
 //Name: Edhan.ma
-//Last modified: Thu, Apr 26, 2018 04:50:27 PM
+//Last modified: Thu, Apr 26, 2018 04:58:04 PM
 //Codeset: 1252
 requires maya "2017ff05";
 requires "stereoCamera" "10.0";
@@ -15,8 +15,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "E34849F4-6540-E9D3-6154-A3AE6851E63C";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0.68129939211998813 38.011344574266616 49.114136340517206 ;
-	setAttr ".r" -type "double3" 3589.4616479207248 2520.9999999916245 1.491112110529017e-016 ;
+	setAttr ".t" -type "double3" 5.3853488849133724 61.726540517899828 64.741993102434037 ;
+	setAttr ".r" -type "double3" 3566.6616479205104 2521.7999999915678 0 ;
 	setAttr ".rp" -type "double3" 0 3.5527136788005009e-015 0 ;
 	setAttr ".rpt" -type "double3" 3.3176396543271857e-015 -7.8735641749966955e-018 
 		-2.9556110379074424e-015 ;
@@ -24,7 +24,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "0C1F5BD4-2747-A283-21B1-41A02BC1721D";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 54.814472004614551;
+	setAttr ".coi" 84.945959868900573;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -27526,6 +27526,10 @@ createNode transform -n "Transform_Ctrl_Grp" -p "Controls";
 	rename -uid "23B4149E-4C5C-2657-D16B-9E97D853BE7C";
 createNode transform -n "Transform_Ctrl" -p "Transform_Ctrl_Grp";
 	rename -uid "2B63B27F-4DE9-DEF2-51C3-3EAF50C4A7C9";
+	addAttr -ci true -sn "IKFKSwitchLEG" -ln "IKFKSwitchLEG" -min 0 -max 1 -at "double";
+	addAttr -ci true -sn "IKFKSwitchARM" -ln "IKFKSwitchARM" -min 0 -max 1 -at "double";
+	setAttr -k on ".IKFKSwitchLEG";
+	setAttr -k on ".IKFKSwitchARM";
 createNode nurbsCurve -n "Transform_CtrlShape" -p "Transform_Ctrl";
 	rename -uid "3B48EE0F-49D8-4E51-DA10-CE969277E184";
 	setAttr -k off ".v";
